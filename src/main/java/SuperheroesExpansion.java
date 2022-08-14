@@ -1,13 +1,13 @@
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
-import me.xemor.superheroes2.Superhero;
-import me.xemor.superheroes2.Superheroes2;
+import me.xemor.superheroes.Superhero;
+import me.xemor.superheroes.Superheroes;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 public class SuperheroesExpansion extends PlaceholderExpansion {
 
-    private Superheroes2 superheroes2;
+    private Superheroes superheroes;
 
     @Override
     public @NotNull String getIdentifier() {
@@ -26,17 +26,17 @@ public class SuperheroesExpansion extends PlaceholderExpansion {
 
     @Override
     public String getRequiredPlugin() {
-        return "Superheroes2";
+        return "Superheroes";
     }
 
     @Override
     public boolean canRegister() {
-        return (superheroes2 = (Superheroes2) Bukkit.getPluginManager().getPlugin(getRequiredPlugin())) != null;
+        return (superheroes = (Superheroes) Bukkit.getPluginManager().getPlugin(getRequiredPlugin())) != null;
     }
 
     @Override
     public String onPlaceholderRequest(Player player, String identifier) {
-        Superhero superhero = superheroes2.getHeroHandler().getSuperhero(player);
+        Superhero superhero = superheroes.getHeroHandler().getSuperhero(player);
         switch (identifier) {
             case "name": return superhero.getName();
             case "description": return superhero.getDescription();
