@@ -21,7 +21,7 @@ public class SuperheroesExpansion extends PlaceholderExpansion {
 
     @Override
     public @NotNull String getVersion() {
-        return "1.0.0";
+        return "1.0.3"; // make sure this stays up to date, placeholder team got annoyed it wasn't accurate
     }
 
     @Override
@@ -37,10 +37,10 @@ public class SuperheroesExpansion extends PlaceholderExpansion {
     @Override
     public String onPlaceholderRequest(Player player, String identifier) {
         Superhero superhero = superheroes.getHeroHandler().getSuperhero(player);
-        switch (identifier) {
-            case "name": return superhero.getName();
-            case "description": return superhero.getDescription();
-            default: return null;
-        }
+        return switch (identifier) {
+            case "name" -> superhero.getName();
+            case "description" -> superhero.getDescription();
+            default -> null;
+        };
     }
 }

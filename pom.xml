@@ -6,7 +6,7 @@
 
     <groupId>me.xemor</groupId>
     <artifactId>SuperheroesPlaceholderExpansion</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.3-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -33,11 +33,11 @@
                                 <relocation>
                                     <pattern>org.bstats</pattern>
                                     <!-- Replace this with your package! -->
-                                    <shadedPattern>me.xemor.superheroes2</shadedPattern>
+                                    <shadedPattern>me.xemor.superheroes</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>de.themoep.minedown-adventure</pattern>
-                                    <shadedPattern>me.xemor.superheroes2</shadedPattern> <!-- Replace this -->
+                                    <shadedPattern>me.xemor.superheroes</shadedPattern> <!-- Replace this -->
                                 </relocation>
                             </relocations>
                         </configuration>
@@ -80,7 +80,7 @@
         <dependency>
             <groupId>me.xemor</groupId>
             <artifactId>Superheroes</artifactId>
-            <version>3.0.0</version>
+            <version>4.5.1</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
